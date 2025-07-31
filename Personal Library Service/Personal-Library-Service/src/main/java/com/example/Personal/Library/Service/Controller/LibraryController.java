@@ -1,6 +1,5 @@
-package com.luv2cod.library.Personal.Library.Service.Controller;
-
-import com.luv2cod.library.Personal.Library.Service.Config.LibraryConfig;
+package com.example.Personal.Library.Service.Controller;
+import  com.example.Personal.Library.Service.Config.LibraryConfig;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
