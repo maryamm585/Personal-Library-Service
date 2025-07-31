@@ -1,4 +1,4 @@
-package com.luv2cod.library.Personal.Library.Service.Config;
+package com.example.Personal.Library.Service.Config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
