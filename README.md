@@ -262,3 +262,54 @@ A Spring Boot service for managing a personal library with greeting and notifica
   ```bash
   curl -X DELETE http://localhost:8081/books/1
     ```
+
+  ---
+
+### Configuration Properties
+
+This section describes how the application uses Spring Boot's configuration properties and profiles to manage settings for different environments.
+
+#### 1. `LibraryConfig.java` (Configuration Class)
+
+- Description: This class uses the `@Component` and `@ConfigurationProperties` annotations to automatically bind properties from `application.properties` or a profile-specific file to
+   a `Java object`. The prefix library is used to match properties like library.name and library.mode.
+  
+**Example**
+
+ ``` text
+# When the 'dev' profile is active (via spring.profiles.active=dev)
+# these properties from application-dev.yml are loaded.
+library:
+  name: Dev Library
+  mode: development
+   ```
+
+  **Expected Response**
+
+ ```text
+LibraryConfig.name = Dev Library
+LibraryConfig.mode = development
+```
+---
+
+### 2. `application.properties` (Main Configuration)
+
+Description: The main configuration file for the application. It contains default properties, database connection settings, and, importantly, sets the active profile to prod, which will override the default library properties defined at the bottom of the file.
+
+**Example**
+
+```text
+# Because `spring.profiles.active=prod`, this file is loaded
+# and its values for `library` properties take precedence.
+library:
+  name: Prod Library
+  mode: production
+```
+
+  **Expected Response**
+
+```text
+library.name = Prod Library
+library.mode = production
+```
+---
