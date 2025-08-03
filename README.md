@@ -117,3 +117,65 @@ Test different greeting services for a given user.
   ```
   Hello Mona From Morning Greeting Service!
   ```
+  ---
+  
+### Notification Service Endpoints
+Test different notification services for sending messages.
+
+---
+
+#### 1. Email Notification (Primary Service)
+
+- **URL:** `http://localhost:8081/notify/email`
+
+- **Description:**  Sends a notification message using the primary EmailNotificationService `annotated with @Primary.`
+
+- **Request Body:** None
+
+- **Response:**
+
+```
+Email Notification Sent: Hello from Email!
+```
+
+- **Example**
+
+```bash
+curl -X GET http://localhost:8081/notify/email
+```
+
+- **Expected Response**
+
+```text
+Email Notification Sent: Hello from Email!
+```
+
+---
+
+#### 2. SMS Notification 
+
+- **URL:** `http://localhost:8081/notify/sms`
+
+- **Description:**  Sends a notification message using the SmsNotificationService`annotated with @Qualifier("sms")).`
+
+- **Request Body:** None
+
+- **Response:**
+
+```
+SMS Notification Sent: Hello from SMS!
+```
+
+- **Example**
+
+```bash
+curl -X GET http://localhost:8081/notify/sms
+```
+
+- **Expected Response**
+
+```text
+SMS Notification Sent: Hello from SMS!
+```
+
+---
