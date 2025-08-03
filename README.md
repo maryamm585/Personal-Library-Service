@@ -182,7 +182,7 @@ SMS Notification Sent: Hello from SMS!
 
 ### Personal Library Service
 
-A Spring Boot application for managing a personal library with greeting and notification services.
+A Spring Boot service for managing a personal library with greeting and notification services.
 
 #### API Endpoints
 
